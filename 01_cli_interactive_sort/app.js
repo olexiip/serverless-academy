@@ -1,7 +1,6 @@
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
-
 const frstMsg = "Hello! I'll sort imputed data(separated by spaces)";
 const askDataMsg = `
 print data:`;
@@ -21,7 +20,6 @@ const textColor2 = "\x1b[33m%s\x1b[0m"; //yellow
 const rl = readline.createInterface({ input, output });
 
 const askData = async () => {
-  
   console.log(textColor1, askDataMsg);
   const answer = await rl.question('> ');
   return answer;
@@ -37,7 +35,7 @@ const textToArr = (text) => {
   let arr;
   try {
     arr = text.split(" "); 
-    console.log("You enter:");
+    console.log(textColor1, "You enter:");
     console.log(arr);
     return arr;
   } catch(e) {
